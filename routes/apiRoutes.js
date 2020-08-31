@@ -28,7 +28,18 @@ module.exports = (app) => {
     });
 
     app.delete("/api/notes/:id", (req, res) => {
-        console.log(req.params.id);
-    })
-
+        // console.log(req.params.id);
+        const id = req.params.id;
+        fs.readFile('./db/db.json', (err, data) => {
+            if (err) throw err;
+            const notes = JSON.parse(data);
+            let newNotesArr = notes.filter((note) => {
+                return id !== note.id;
+            })
+            fs.writeFile('./db/db.json', JSON.stringify(newNotesArr), (err) => {
+                if (err) throw err;
+                res.sendFile(path.join(__dirname, "../public/notes.html"));
+            });
+        });
+    });
 }
