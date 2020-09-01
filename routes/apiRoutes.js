@@ -17,7 +17,6 @@ module.exports = (app) => {
     app.post("/api/notes", (req, res) => {
         let newNote = req.body;
         newNote.id = uuidv4();
-        console.log(newNote);
         fs.readFile('./db/db.json', (err, data) => {
             if (err) throw err;
             let notes = JSON.parse(data);
