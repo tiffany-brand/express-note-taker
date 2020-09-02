@@ -23,7 +23,7 @@ module.exports = (app) => {
             notes.push(newNote);
             fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
                 if (err) throw err;
-                res.sendFile(path.join(__dirname, "../public/notes.html"));
+                res.json(notes);
             });
         });
     });
@@ -39,7 +39,7 @@ module.exports = (app) => {
             })
             fs.writeFile('./db/db.json', JSON.stringify(newNotesArr), (err) => {
                 if (err) throw err;
-                res.sendFile(path.join(__dirname, "../public/notes.html"));
+                res.json(newNotesArr);
             });
         });
     });
