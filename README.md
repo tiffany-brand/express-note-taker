@@ -2,6 +2,10 @@
 
 [![License: MIT](https://img.shields.io/github/license/tiffany-brand/express-note-taker?style=plastic)](./LICENSE)
 
+## Description
+
+This application allows a user to write, save, delete, and view previously saved notes. It uses an Express backend to save and retrive note data from a JSON file. 
+
 ## Table of Contents
 
 * [Description](#description)
@@ -13,9 +17,6 @@
 * [License](#license)
 * [Questions](#questions)
 
-## Description
-
-This application allows a user to write, save, delete, and view previously saved notes. It uses an Express backend to save and retrive note data from a JSON file. 
 
 ## Deployed Link
 
